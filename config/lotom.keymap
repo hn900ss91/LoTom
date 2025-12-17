@@ -50,7 +50,7 @@
         default_layer {
             bindings = <
 &kp ESCAPE                 &kp ENTER
-&kp TAB                    &kp Q         &kp W         &kp E                    &kp R        &kp T          &kp Y          &kp U      &kp I                   &kp O                    &kp P      &kp INT_YEN
+&kp TAB                    &kp Q         &kp W         &kp E                    &kp R        &lt 6 T        &kp Y          &kp U      &kp I                   &kp O                    &kp P      &kp INT_YEN
 &kp CLCK                   &kp A         &kp S         &kp D                    &kp F        &kp G          &kp H          &kp J      &kp K                   &kp L                    &kp SLASH  &kp UP_ARROW
 &mt LEFT_SHIFT INT_HENKAN  &kp Z         &kp X         &kp C                    &kp V        &kp B          &kp N          &kp M      &kp COMMA               &kp COMMA                &kp SLASH  &kp DOWN_ARROW
 &mt LCTRL INT_HENKAN       &kp LEFT_WIN  &kp LEFT_ALT  &kp LANG_ZENKAKUHANKAKU  &lt 4 SPACE  &kp LG(SPACE)  &kp BACKSPACE  &lt 3 DEL  &lt 2 LEFT_PARENTHESIS  &lt 1 RIGHT_PARENTHESIS
