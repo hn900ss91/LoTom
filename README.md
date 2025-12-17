@@ -4,7 +4,12 @@
   ![lotom keyboard](img/lotom2.jpeg)
 
 ## ビルドガイド
-- 準備中
+- ビルドガイド
+  - https://frequent-breeze-833.notion.site/LoTom-2b6e518048a380d1be4de0b7536d209b
+
+- 購入後のセットアップ
+  - https://frequent-breeze-833.notion.site/LoTom-2ace518048a380438cd8c65c32c07ce9
+
 ## スペック
 - ファームウェア
   - ZMK を使用しています
