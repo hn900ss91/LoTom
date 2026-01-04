@@ -191,13 +191,13 @@
             >;
         };
 
-        NUM {
+       NUM {
             bindings = <
 &trans  &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5     &kp NUMBER_6  &kp N7            &kp N8  &kp N9  &kp N0  &kp GRAVE
-&trans  &trans        &trans        &trans        &kp SEMI      &kp MINUS  &kp EQUAL     &kp SINGLE_QUOTE  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans     &trans        &trans            &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans     &trans        &trans            &trans  &trans
+&trans  &kp N1  &n2_at  &kp N3  &kp N4  &kp N5    &n6_caret  &n7_amp  &n8_ast  &n9_lpar  &n0_rpar  &kp JP_HANZEN
+&trans  &trans  &trans  &trans  &kp JP_COLON  &kp MINUS  &kp JP_CARET  &kp JP_QUOTE  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
 
