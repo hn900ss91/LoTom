@@ -57,7 +57,7 @@
             bindings = <&kp GRAVE>, <&kp INT_KANA>;
         };
 
-// 2 と @ の組み合わせ
+        // 2 と @ の組み合わせ
         n2_at: no_wait_n2_at {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -99,7 +99,6 @@
             bindings = <&kp N0>, <&kp JP_RPAREN>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-    };
     };
 
     combos {
