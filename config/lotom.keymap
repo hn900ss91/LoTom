@@ -54,7 +54,10 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAPDANCE_EISUKANA";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE>, <&kp INT_KANA>;
+            // 1回タップで英数（LANGUAGE_2）、2回タップでかな（LANGUAGE_1）を送信
+            bindings = <&kp JP_EISU>, <&kp JP_KANA>; 
+            // 2回目のタップを待つ時間（ミリ秒）
+            tapping-term-ms = <200>; 
         };
 
         // 2 と @ の組み合わせ
