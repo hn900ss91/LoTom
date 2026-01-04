@@ -56,6 +56,50 @@
             #binding-cells = <0>;
             bindings = <&kp GRAVE>, <&kp INT_KANA>;
         };
+
+// 2 と @ の組み合わせ
+        n2_at: no_wait_n2_at {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&kp JP_AT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        // 6 と ^ の組み合わせ
+        n6_caret: no_wait_n6_caret {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N6>, <&kp JP_CARET>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        // 7 と & の組み合わせ
+        n7_amp: no_wait_n7_amp {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N7>, <&kp JP_AMPERSAND>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        // 8 と * の組み合わせ
+        n8_ast: no_wait_n8_ast {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N8>, <&kp JP_ASTERISK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        // 9 と ( の組み合わせ
+        n9_lpar: no_wait_n9_lpar {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp JP_LPAREN>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        // 0 と ) の組み合わせ
+        n0_rpar: no_wait_n0_rpar {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N0>, <&kp JP_RPAREN>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
     };
 
     combos {
