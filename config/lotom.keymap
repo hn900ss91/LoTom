@@ -14,11 +14,18 @@
 /* ========================================================
    低DPI（精密操作）プロセッサー＆トラックボールリスナー設定
    ======================================================== */
-&trackball_listener {
-    // Layer 5 が有効な時だけ低DPI（1/5倍速）を適用
-    slow_dpi {
-        layers = <5>;
-        input-processors = <&zip_xy_scaler 1 5>;
+&zip_temp_layer {
+    /delete-property/ excluded-positions;
+};
+
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&vtrackball>;
+
+        input-processors
+            = <&zip_temp_layer 1 400>
+            , <&zip_xy_scaler 1 5>; // 移動量を1/5（減速）にスケーリング
     };
 };
 
@@ -97,10 +104,10 @@
         MOUSE {
             bindings = <
 &trans                                                                                                                                            &trans
-&trans      &trans        &trans            &trans          &trans           &trans             &trans      &trans       &trans    &mkp MB4   &mkp MB5     &trans
-&trans      &trans        &trans            &trans          &trans           &trans             &trans      &mo 5        &click_and_exit &mkp MB3 &mkp MB2 &trans
-&trans      &trans        &trans            &trans          &trans           &trans             &trans      &trans       &trans    &trans     &trans       &trans
-&kp LALT    &kp LCTRL     &kp LCMD          &kp LSHIFT      &trans           &trans             &trans      &mo 3                             &trans       &trans
+&trans      &trans        &trans            &trans          &trans           &trans             &trans      &trans           &trans    &mkp MB4   &mkp MB5     &trans
+&trans      &trans        &trans            &trans          &trans           &trans             &trans      &mo 5            &click_and_exit &mkp MB3 &mkp MB2 &trans
+&trans      &trans        &trans            &trans          &trans           &trans             &trans      &trans           &trans    &trans     &trans       &trans
+&kp LALT    &kp LCTRL     &kp LCMD          &kp LSHIFT      &trans           &trans             &trans      &mo 3                                 &trans       &trans
             >;
 
             sensor-bindings = <
