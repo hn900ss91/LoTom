@@ -88,8 +88,8 @@
 &kp LSHIFT  &kp LCTRL     &kp LCMD          &kp LALT        &lt 4 SPACE      &lt 3 LANG1        &lt 2 BSPC  &lt 3 ENTER                           &lt 2 ESC    &lt 1 INT5
             >;
             sensor-bindings = <
-                &bottom_rotate
-                &scroll_up_down
+                &inc_dec_kp LA(LG(RIGHT)) LA(LG(LEFT))
+                &inc_dec_kp DOWN UP
             >;
         };
 
