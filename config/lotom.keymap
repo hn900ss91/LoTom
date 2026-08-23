@@ -12,24 +12,16 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 /* ========================================================
-   オートマウスレイヤー＆トラックボールリスナー設定
+   低DPI（精密操作）プロセッサー定義
    ======================================================== */
-&zip_temp_layer {
-    /delete-property/ excluded-positions;
-};
-
 / {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&vtrackball>;
-
-        input-processors = <&zip_temp_layer 1 400>;
-
-        /* Layer 5 (SLOW_DPI) がアクティブな時、または低DPI操作時の設定 */
-        slow_mouse {
-            layers = <5>;
-            input-processors = <&zip_xy_scaler 1 5>;
-        };
+    zip_slow_scaler: zip_slow_scaler {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_X INPUT_REL_Y>;
+        mul = <1>;
+        div = <5>;
     };
 };
 
