@@ -12,7 +12,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 /* ========================================================
-   低DPI（精密操作）プロセッサー＆トラックボールリスナー設定
+   オートマウスレイヤー＆トラックボールリスナー設定
    ======================================================== */
 &zip_temp_layer {
     /delete-property/ excluded-positions;
@@ -23,9 +23,13 @@
         compatible = "zmk,input-listener";
         device = <&vtrackball>;
 
-        input-processors
-            = <&zip_temp_layer 1 400>
-            , <&zip_xy_scaler 1 5>; // 移動量を1/5（減速）にスケーリング
+        input-processors = <&zip_temp_layer 1 400>;
+
+        /* Layer 5 (SLOW_DPI) がアクティブな時、または低DPI操作時の設定 */
+        slow_mouse {
+            layers = <5>;
+            input-processors = <&zip_xy_scaler 1 5>;
+        };
     };
 };
 
@@ -103,11 +107,11 @@
         // Layer 1 (MOUSE レイヤー)
         MOUSE {
             bindings = <
-&trans                                                                                                                                            &trans
-&trans      &trans        &trans            &trans          &trans           &trans             &trans      &trans           &trans    &mkp MB4   &mkp MB5     &trans
-&trans      &trans        &trans            &trans          &trans           &trans             &trans      &mo 5            &click_and_exit &mkp MB3 &mkp MB2 &trans
-&trans      &trans        &trans            &trans          &trans           &trans             &trans      &trans           &trans    &trans     &trans       &trans
-&kp LALT    &kp LCTRL     &kp LCMD          &kp LSHIFT      &trans           &trans             &trans      &mo 3                                 &trans       &trans
+&trans                                                                                                                                                                &trans
+&trans      &trans        &trans            &trans          &trans           &trans             &trans      &trans           &trans           &mkp MB4   &mkp MB5     &trans
+&trans      &trans        &trans            &trans          &trans           &trans             &trans      &mo 5            &click_and_exit  &mkp MB3   &mkp MB2     &trans
+&trans      &trans        &trans            &trans          &trans           &trans             &trans      &trans           &trans           &trans     &trans       &trans
+&kp LALT    &kp LCTRL     &kp LCMD          &kp LSHIFT      &trans           &trans             &trans      &mo 3                                              &trans       &trans
             >;
 
             sensor-bindings = <
