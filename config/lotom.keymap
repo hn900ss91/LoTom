@@ -14,18 +14,11 @@
 /* ========================================================
    低DPI（精密操作）プロセッサー＆トラックボールリスナー設定
    ======================================================== */
-&zip_temp_layer {
-    /delete-property/ excluded-positions;
-};
-
-/ {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&vtrackball>; // Lotomの定義に合わせて調整
-
-        input-processors
-            = <&zip_temp_layer 1 400>
-            , <&zip_xy_scaler 1 5>; // 移動量を1/5（減速）にスケーリング
+&trackball_listener {
+    // Layer 5 が有効な時だけ低DPI（1/5倍速）を適用
+    slow_dpi {
+        layers = <5>;
+        input-processors = <&zip_xy_scaler 1 5>;
     };
 };
 
