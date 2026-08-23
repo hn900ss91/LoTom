@@ -18,12 +18,9 @@
     /delete-property/ excluded-positions;
 };
 
-/ {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&zip_temp_layer 1 400>;
-    };
+/* 既存のリスナーを参照してinput-processorsを上書き（左右どちらのビルドでもエラーになりません） */
+&trackball_listener {
+    input-processors = <&zip_temp_layer 1 400>;
 };
 
 &mouse_runtime_input_processor {
