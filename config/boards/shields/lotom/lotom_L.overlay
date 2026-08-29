@@ -39,7 +39,7 @@
         compatible = "alps,ec11";
         a-gpios = <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <24>;
+        steps = <12>;
         status = "okay";
     };
 
@@ -54,7 +54,7 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder_bottom &left_encoder_side>;
-        triggers-per-rotation = <10>;
+        triggers-per-rotation = <12>;
     };
 
     trackball_listener: trackball_listener {
